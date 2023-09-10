@@ -2,8 +2,9 @@ var express = require('express');
 // const UserRouting = require('./Routes');
 const mongoose = require('mongoose')
 var app = express();
-const cors = require('cors')
-const port = 5000
+const cors = require('cors');
+require('dotenv').config();
+const port = process.env.PORT || 5000;
 app.use(cors())
 
 //schema section
