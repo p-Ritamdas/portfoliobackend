@@ -44,17 +44,15 @@ app.use(express.json())
 app.post('/send', async (req, res) => {
     const { name, email, phone,message } = req.body
   
-        const user = new userModel({
-          
-      
-            name, email, phone,message
 
+        const user = new userModel({
+         
+            name, email, phone,message
         })
        await user.save()
            console.log(user)
-  
-})
 
+})
 
 app.get('/',(req,res)=>{
     res.send("start")
@@ -66,6 +64,7 @@ mongoose.connect("mongodb+srv://patmax3050:Pritam6699@cluster0.mg3glix.mongodb.n
 }).catch(() => {
     console.log("Mongodb is Not Connected ! ")
 })
+
 
 app.listen(port, function () {
     console.log('Node server is running..');
